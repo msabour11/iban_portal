@@ -1,0 +1,696 @@
+/* IBM Plex Sans Arabic, SIL Open Font License 1.1 (see ../fonts/OFL.txt). Self-hosted: no third-party requests from the login page. */
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-arabic-400.woff2") format("woff2");
+	unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-latin-400.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-arabic-500.woff2") format("woff2");
+	unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-latin-500.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-arabic-600.woff2") format("woff2");
+	unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-latin-600.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-arabic-700.woff2") format("woff2");
+	unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/iban_portal/fonts/ibm-plex-sans-arabic-latin-700.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ------------------------------------------------------------------
+   IBAN login page
+   ------------------------------------------------------------------ */
+
+:root {
+	--iban-blue: #0b1e9e;
+	--iban-blue-600: #0a198a;
+	--iban-blue-700: #081470;
+	--iban-navy: #050b3a;
+	--iban-navy-2: #0a1460;
+	--iban-green: #12e06e;
+	--iban-green-soft: #8ff0b8;
+	--iban-ink: #0d1440;
+	--iban-text: #2c3554;
+	--iban-muted: #6b7390;
+	--iban-line: #dfe3f0;
+	--iban-surface: #f5f7fc;
+	--iban-card: #ffffff;
+	--iban-danger: #d92d3a;
+	--iban-radius: 14px;
+	--iban-eye: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+	--iban-eye-off: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.9 4.2A10.4 10.4 0 0 1 12 4c6.4 0 10 8 10 8a17 17 0 0 1-2.2 3.2'/%3E%3Cpath d='M6.6 6.6A17 17 0 0 0 2 12s3.6 8 10 8a9.7 9.7 0 0 0 5.4-1.6'/%3E%3Cpath d='M14.1 14.1a3 3 0 1 1-4.2-4.2'/%3E%3Cpath d='m2 2 20 20'/%3E%3C/svg%3E");
+	--iban-font: "IBM Plex Sans Arabic", "Inter", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+}
+
+body.iban-login-page {
+	margin: 0;
+	background: var(--iban-surface);
+	color: var(--iban-text);
+	font-family: var(--iban-font);
+	-webkit-font-smoothing: antialiased;
+}
+
+.iban-login {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	min-height: 100vh;
+	min-height: 100dvh;
+	font-family: var(--iban-font);
+}
+
+.iban-login *,
+.iban-login *::before,
+.iban-login *::after {
+	box-sizing: border-box;
+}
+
+/* ---------- brand panel ---------- */
+
+.iban-brand {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 48px;
+	padding: 56px clamp(32px, 5vw, 72px);
+	color: #fff;
+	background:
+		radial-gradient(60% 50% at 85% 10%, rgba(18, 224, 110, 0.18), transparent 70%),
+		radial-gradient(55% 45% at 10% 95%, rgba(43, 76, 255, 0.35), transparent 70%),
+		linear-gradient(160deg, var(--iban-navy) 0%, var(--iban-navy-2) 55%, var(--iban-blue-700) 100%);
+}
+
+.iban-brand::after {
+	/* subtle dot grid echoing the logo's dots */
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+	background-size: 22px 22px;
+	mask-image: linear-gradient(180deg, transparent, #000 40%, #000 70%, transparent);
+	-webkit-mask-image: linear-gradient(180deg, transparent, #000 40%, #000 70%, transparent);
+	pointer-events: none;
+}
+
+.iban-brand > * {
+	position: relative;
+	z-index: 1;
+}
+
+.iban-brand-logo {
+	display: block;
+	width: auto;
+	height: 46px;
+}
+
+.iban-brand-body {
+	max-width: 560px;
+}
+
+.iban-eyebrow {
+	margin: 0 0 18px;
+	color: var(--iban-green);
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+[dir="rtl"] .iban-eyebrow {
+	letter-spacing: 0;
+	font-size: 15px;
+}
+
+.iban-headline {
+	margin: 0 0 20px;
+	color: #fff;
+	font-family: var(--iban-font);
+	font-size: clamp(32px, 3.4vw, 48px);
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+[dir="rtl"] .iban-headline {
+	line-height: 1.35;
+}
+
+.iban-accent {
+	color: var(--iban-green-soft);
+}
+
+.iban-lead {
+	margin: 0 0 28px;
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 17px;
+	line-height: 1.7;
+}
+
+.iban-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.iban-chips li {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 16px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.06);
+	color: rgba(255, 255, 255, 0.92);
+	font-size: 14px;
+	backdrop-filter: blur(6px);
+}
+
+.iban-chips svg {
+	color: var(--iban-green);
+	flex: none;
+}
+
+.iban-brand-foot {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 13px;
+}
+
+/* ---------- auth panel ---------- */
+
+.iban-auth {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 72px 24px 40px;
+	background:
+		radial-gradient(40% 35% at 100% 0%, rgba(18, 224, 110, 0.1), transparent 70%),
+		radial-gradient(45% 40% at 0% 100%, rgba(11, 30, 158, 0.07), transparent 70%),
+		var(--iban-surface);
+}
+
+.iban-auth-inner {
+	width: 100%;
+	max-width: 440px;
+}
+
+.iban-lang {
+	position: absolute;
+	top: 20px;
+	inset-inline-end: 24px;
+	display: inline-flex;
+	padding: 3px;
+	border: 1px solid var(--iban-line);
+	border-radius: 999px;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(13, 20, 64, 0.06);
+}
+
+.iban-lang a {
+	padding: 6px 14px;
+	border-radius: 999px;
+	color: var(--iban-muted);
+	font-size: 13px;
+	font-weight: 500;
+	text-decoration: none;
+	line-height: 1.2;
+}
+
+.iban-lang a:hover {
+	color: var(--iban-ink);
+	text-decoration: none;
+}
+
+.iban-lang a.active {
+	background: var(--iban-blue);
+	color: #fff;
+}
+
+.iban-lang a:focus-visible {
+	outline: 2px solid var(--iban-blue);
+	outline-offset: 2px;
+}
+
+.iban-noscript {
+	margin-bottom: 16px;
+	padding: 16px;
+	border-radius: 10px;
+	background: #fff4f4;
+	color: var(--iban-danger);
+	text-align: center;
+}
+
+/* sections are switched by frappe's login.js on hashchange */
+.iban-login .for-forgot,
+.iban-login .for-login-with-email-link,
+.iban-login .for-signup,
+.iban-login .for-email-login {
+	display: none;
+}
+
+/* card */
+.iban-login .for-login .page-card,
+.iban-login .for-forgot .page-card,
+.iban-login .for-signup .page-card,
+.iban-login .for-email-login .page-card,
+.iban-login .for-login-with-email-link .page-card {
+	max-width: none;
+	margin: 0;
+	padding: 36px 36px 32px;
+	border: 1px solid rgba(223, 227, 240, 0.8);
+	border-radius: 20px;
+	background: var(--iban-card);
+	box-shadow: 0 1px 2px rgba(13, 20, 64, 0.04), 0 18px 48px -12px rgba(13, 20, 64, 0.16);
+}
+
+.iban-login .page-card-head {
+	padding: 0;
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+.iban-card-logo {
+	display: block;
+	width: auto;
+	max-width: 100%;
+	height: 72px;
+	margin: 0 auto 20px;
+}
+
+.iban-login .page-card-head h2 {
+	margin: 0 0 6px;
+	color: var(--iban-ink);
+	font-family: var(--iban-font);
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.iban-card-subtitle {
+	margin: 0;
+	color: var(--iban-muted);
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.iban-login .page-card .page-card-body {
+	padding: 0;
+}
+
+.iban-login .form-group {
+	margin-bottom: 16px;
+}
+
+.iban-login .form-label {
+	display: block;
+	margin-bottom: 6px;
+	color: var(--iban-text);
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.iban-login .email-field,
+.iban-login .password-field {
+	position: relative;
+}
+
+.iban-login .page-card .form-control {
+	width: 100%;
+	height: 46px;
+	margin: 0;
+	padding-block: 10px;
+	padding-inline: 40px 14px;
+	border: 1px solid var(--iban-line);
+	border-radius: 10px;
+	background: #fbfcff;
+	color: var(--iban-ink);
+	font-family: var(--iban-font);
+	font-size: 15px;
+	transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.iban-login .page-card .password-field .form-control {
+	padding-inline-end: 64px;
+}
+
+.iban-login .page-card .form-control::placeholder {
+	color: #a3aac2;
+}
+
+.iban-login .page-card .form-control:focus {
+	border-color: var(--iban-blue);
+	background: #fff;
+	box-shadow: 0 0 0 3px rgba(11, 30, 158, 0.14);
+	outline: none;
+}
+
+.iban-login .page-card .field-icon {
+	position: absolute;
+	top: 50%;
+	left: auto;
+	right: auto;
+	inset-inline-start: 14px;
+	transform: translateY(-50%);
+	color: var(--iban-muted);
+	stroke: currentColor;
+	pointer-events: none;
+}
+
+.iban-login .page-card .toggle-password {
+	/* login.js writes "Show"/"Hide" text; it stays for screen readers, an eye icon is drawn */
+	position: absolute;
+	top: 50%;
+	left: auto;
+	right: auto;
+	inset-inline-end: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	transform: translateY(-50%);
+	color: var(--iban-muted);
+	font-size: 0;
+	cursor: pointer;
+	user-select: none;
+}
+
+.iban-login .page-card .toggle-password::before {
+	content: "";
+	width: 18px;
+	height: 18px;
+	background-color: currentColor;
+	-webkit-mask: var(--iban-eye) center / contain no-repeat;
+	mask: var(--iban-eye) center / contain no-repeat;
+}
+
+.iban-login .page-card .toggle-password:hover,
+.iban-login .page-card .toggle-password:focus-visible {
+	background: var(--iban-surface);
+	color: var(--iban-blue);
+	outline: none;
+}
+
+.iban-login .password-field:has(input[type="text"]) .toggle-password::before {
+	-webkit-mask-image: var(--iban-eye-off);
+	mask-image: var(--iban-eye-off);
+}
+
+.iban-login .forgot-password-message {
+	margin: -4px 0 0;
+	text-align: end;
+	font-size: 13px;
+}
+
+.iban-login a {
+	color: var(--iban-blue);
+}
+
+.iban-login .page-card-actions {
+	margin-top: 22px;
+	padding: 0;
+}
+
+.iban-login .page-card .btn {
+	height: 48px;
+	border-radius: 10px;
+	font-family: var(--iban-font);
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.iban-login .page-card .btn-primary {
+	border: 0;
+	background: linear-gradient(180deg, var(--iban-blue) 0%, var(--iban-blue-600) 100%);
+	color: #fff;
+	box-shadow: 0 8px 20px -8px rgba(11, 30, 158, 0.6);
+	transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+
+.iban-login .page-card .btn-primary:hover {
+	background: var(--iban-blue-700);
+	box-shadow: 0 10px 24px -8px rgba(11, 30, 158, 0.7);
+}
+
+.iban-login .page-card .btn-primary:active {
+	transform: translateY(1px);
+}
+
+.iban-login .page-card .btn-primary:focus-visible,
+.iban-login .page-card .btn-default:focus-visible {
+	outline: 3px solid rgba(18, 224, 110, 0.6);
+	outline-offset: 2px;
+}
+
+.iban-login .page-card .btn-default {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	border: 1px solid var(--iban-line);
+	background: #fff;
+	color: var(--iban-ink);
+}
+
+.iban-login .page-card .btn-default:hover {
+	background: var(--iban-surface);
+}
+
+.iban-login .social-logins {
+	margin-top: 18px;
+}
+
+.iban-login .login-divider {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 14px;
+	color: var(--iban-muted);
+	font-size: 12px;
+}
+
+.iban-login .login-divider::before,
+.iban-login .login-divider::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--iban-line);
+}
+
+.iban-login .login-button-wrapper + .login-button-wrapper {
+	margin-top: 10px;
+}
+
+.iban-login .sign-up-message {
+	margin: 16px 0 0;
+	color: var(--iban-muted);
+	font-size: 14px;
+	text-align: center;
+}
+
+.iban-signup-disabled {
+	color: var(--iban-muted);
+	font-size: 14px;
+	text-align: center;
+}
+
+/* invalid login: frappe toggles these classes */
+.iban-login .page-card.invalid-login {
+	animation: iban-shake 0.35s ease-in-out;
+}
+
+.iban-login .page-card-body.invalid .form-control {
+	border-color: var(--iban-danger);
+}
+
+.iban-login .page-card-body.invalid ~ .page-card-actions .btn-primary,
+.iban-login .invalid-login .btn-primary {
+	background: var(--iban-danger);
+	box-shadow: none;
+}
+
+@keyframes iban-shake {
+	20%, 60% { transform: translateX(-6px); }
+	40%, 80% { transform: translateX(6px); }
+}
+
+/* 2FA view injected by login.js */
+.iban-login #login_token {
+	letter-spacing: 0.3em;
+	text-align: center;
+}
+
+.iban-help {
+	margin-top: 24px;
+	color: var(--iban-muted);
+	font-size: 13px;
+	text-align: center;
+}
+
+.iban-help p {
+	margin: 0 0 4px;
+}
+
+.iban-help a {
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.iban-help a:hover {
+	text-decoration: underline;
+}
+
+.iban-copy {
+	margin-top: 10px !important;
+	color: #9aa1b8;
+	font-size: 12px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 991.98px) {
+	.iban-login {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr;
+	}
+
+	.iban-brand {
+		gap: 20px;
+		padding: 28px 16px 32px;
+	}
+
+	.iban-brand-logo {
+		height: 34px;
+	}
+
+	.iban-headline {
+		margin-bottom: 0;
+		font-size: 26px;
+	}
+
+	.iban-lead,
+	.iban-chips,
+	.iban-brand-foot {
+		display: none;
+	}
+
+	.iban-eyebrow {
+		margin-bottom: 8px;
+		font-size: 11px;
+	}
+
+	.iban-login {
+		position: relative;
+	}
+
+	.iban-lang {
+		top: 24px;
+		inset-inline-end: 16px;
+		border-color: rgba(255, 255, 255, 0.2);
+		background: rgba(255, 255, 255, 0.1);
+		box-shadow: none;
+	}
+
+	.iban-lang a {
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.iban-lang a.active {
+		background: #fff;
+		color: var(--iban-blue);
+	}
+
+	.iban-auth {
+		position: static;
+		align-items: flex-start;
+		padding: 0 16px 32px;
+		background: var(--iban-surface);
+	}
+
+	.iban-auth-inner {
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.iban-login .for-login .page-card,
+	.iban-login .for-forgot .page-card,
+	.iban-login .for-signup .page-card,
+	.iban-login .for-email-login .page-card,
+	.iban-login .for-login-with-email-link .page-card {
+		padding: 28px 20px 24px;
+		border-radius: 16px;
+	}
+
+	.iban-card-logo {
+		height: 56px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.iban-login * {
+		animation: none !important;
+		transition: none !important;
+	}
+}
