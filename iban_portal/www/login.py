@@ -7,11 +7,13 @@ from frappe.www.login import get_context as frappe_get_context
 
 no_cache = 1
 
-LOGIN_LANGUAGES = ("en", "ar")
-RTL_LANGUAGES = ("ar", "fa", "he", "ur")
+LOGIN_LANGUAGES: tuple[str, ...] = ("en", "ar")
+RTL_LANGUAGES: tuple[str, ...] = ("ar", "fa", "he", "ur")
 
 
-def get_context(context):
+def get_context(context: frappe._dict) -> frappe._dict:
+	# v16 stock get_context also sets context.logo (get_app_logo()), which
+	# this template does not use: the IBAN logos are fixed brand assets.
 	context = frappe_get_context(context)
 
 	lang = (frappe.local.lang or "en").split("-")[0]
