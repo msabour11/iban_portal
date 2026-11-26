@@ -19,12 +19,24 @@ document.querySelectorAll(".iban-lang a[data-lang]").forEach((link) => {
 	});
 });
 
-// login.js binds the show/hide toggle to click only; make it keyboard operable
+// The show/hide toggle is an <svg role="button" tabindex="0">; login.js binds
+// click only, so make it keyboard operable. SVG elements have no .click(), so a
+// click event is dispatched instead (jQuery's click handler still receives it).
 document.querySelectorAll(".iban-login .toggle-password").forEach((toggle) => {
+	const input = document.querySelector(toggle.getAttribute("toggle"));
+
+	// login.js flips the input type on click; mirror the new state in the label
+	const sync_label = () => {
+		const shown = input && input.type === "text";
+		toggle.setAttribute("aria-label", shown ? toggle.dataset.labelHide : toggle.dataset.labelShow);
+		toggle.setAttribute("aria-pressed", shown ? "true" : "false");
+	};
+
+	toggle.addEventListener("click", () => setTimeout(sync_label));
 	toggle.addEventListener("keydown", (event) => {
 		if (event.key === "Enter" || event.key === " ") {
 			event.preventDefault();
-			toggle.click();
+			toggle.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
 		}
 	});
 });

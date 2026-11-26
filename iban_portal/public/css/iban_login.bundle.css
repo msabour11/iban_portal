@@ -90,9 +90,10 @@
 	--iban-surface: #f5f7fc;
 	--iban-card: #ffffff;
 	--iban-danger: #d92d3a;
+	--iban-danger-soft: #fdecee;
+	--iban-success: #0d8a45;
+	--iban-success-soft: #e6f8ee;
 	--iban-radius: 14px;
-	--iban-eye: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
-	--iban-eye-off: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.9 4.2A10.4 10.4 0 0 1 12 4c6.4 0 10 8 10 8a17 17 0 0 1-2.2 3.2'/%3E%3Cpath d='M6.6 6.6A17 17 0 0 0 2 12s3.6 8 10 8a9.7 9.7 0 0 0 5.4-1.6'/%3E%3Cpath d='M14.1 14.1a3 3 0 1 1-4.2-4.2'/%3E%3Cpath d='m2 2 20 20'/%3E%3C/svg%3E");
 	--iban-font: "IBM Plex Sans Arabic", "Inter", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
 }
 
@@ -156,6 +157,40 @@ body.iban-login-page {
 	display: block;
 	width: auto;
 	height: 46px;
+}
+
+/* logo + "ERPNext" lockup, matching the card logo (word centred between rules) */
+.iban-brand-top {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: flex-start;
+	width: fit-content;
+	gap: 8px;
+}
+
+.iban-brand-top .iban-brand-product {
+	align-self: stretch;
+}
+
+.iban-brand-product {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: #fff;
+	font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: 0.02em;
+}
+
+.iban-brand-product::before,
+.iban-brand-product::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: rgba(255, 255, 255, 0.35);
 }
 
 .iban-brand-body {
@@ -389,6 +424,11 @@ body.iban-login-page {
 	transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
 }
 
+/* inputs without a leading icon (signup form from frappe's template) */
+.iban-login .page-card .form-group > .form-control {
+	padding-inline: 14px;
+}
+
 .iban-login .page-card .password-field .form-control {
 	padding-inline-end: 64px;
 }
@@ -416,33 +456,27 @@ body.iban-login-page {
 	pointer-events: none;
 }
 
+/* show/hide eye: an <svg role="button"> whose <use> href login.js swaps */
 .iban-login .page-card .toggle-password {
-	/* login.js writes "Show"/"Hide" text; it stays for screen readers, an eye icon is drawn */
 	position: absolute;
 	top: 50%;
 	left: auto;
 	right: auto;
 	inset-inline-end: 8px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 34px;
-	height: 34px;
+	box-sizing: content-box;
+	width: 18px;
+	height: 18px;
+	padding: 8px;
 	border-radius: 8px;
 	transform: translateY(-50%);
 	color: var(--iban-muted);
-	font-size: 0;
+	stroke: currentColor;
+	fill: none;
+	stroke-width: 1.8;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 	cursor: pointer;
 	user-select: none;
-}
-
-.iban-login .page-card .toggle-password::before {
-	content: "";
-	width: 18px;
-	height: 18px;
-	background-color: currentColor;
-	-webkit-mask: var(--iban-eye) center / contain no-repeat;
-	mask: var(--iban-eye) center / contain no-repeat;
 }
 
 .iban-login .page-card .toggle-password:hover,
@@ -452,9 +486,8 @@ body.iban-login-page {
 	outline: none;
 }
 
-.iban-login .password-field:has(input[type="text"]) .toggle-password::before {
-	-webkit-mask-image: var(--iban-eye-off);
-	mask-image: var(--iban-eye-off);
+.iban-login .page-card .toggle-password:focus-visible {
+	box-shadow: 0 0 0 2px var(--iban-blue);
 }
 
 .iban-login .forgot-password-message {
@@ -467,20 +500,47 @@ body.iban-login-page {
 	color: var(--iban-blue);
 }
 
+/* stock markup nests labels/inputs without .form-label / .email-field (signup form) */
+.iban-login .form-group > label {
+	display: block;
+	margin-bottom: 6px;
+	color: var(--iban-text);
+	font-size: 13px;
+	font-weight: 600;
+}
+
 .iban-login .page-card-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 	margin-top: 22px;
 	padding: 0;
 }
 
-.iban-login .page-card .btn {
+/* v16 login.js toggles these helper classes (hide: forms until ready, hidden: banners/resend) */
+.iban-login .hide,
+.iban-login .hidden {
+	display: none !important;
+}
+
+/* ---------- buttons (.es-button, styled by frappe's website.bundle.css) ---------- */
+
+.iban-login .es-button {
+	width: 100%;
 	height: 48px;
 	border-radius: 10px;
 	font-family: var(--iban-font);
 	font-size: 15px;
 	font-weight: 600;
+	text-decoration: none;
 }
 
-.iban-login .page-card .btn-primary {
+.iban-login .es-button:focus-visible {
+	outline: 3px solid rgba(18, 224, 110, 0.6);
+	outline-offset: 2px;
+}
+
+.iban-login .es-button[data-variant="solid"] {
 	border: 0;
 	background: linear-gradient(180deg, var(--iban-blue) 0%, var(--iban-blue-600) 100%);
 	color: #fff;
@@ -488,44 +548,51 @@ body.iban-login-page {
 	transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
 }
 
-.iban-login .page-card .btn-primary:hover {
+.iban-login .es-button[data-variant="solid"]:hover {
 	background: var(--iban-blue-700);
 	box-shadow: 0 10px 24px -8px rgba(11, 30, 158, 0.7);
 }
 
-.iban-login .page-card .btn-primary:active {
+.iban-login .es-button[data-variant="solid"]:active {
 	transform: translateY(1px);
 }
 
-.iban-login .page-card .btn-primary:focus-visible,
-.iban-login .page-card .btn-default:focus-visible {
-	outline: 3px solid rgba(18, 224, 110, 0.6);
-	outline-offset: 2px;
+.iban-login .es-button[data-variant="solid"]:disabled {
+	background: #c9cfe6;
+	box-shadow: none;
+	cursor: not-allowed;
 }
 
-.iban-login .page-card .btn-default {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+.iban-login .es-button[data-variant="outline"] {
 	gap: 8px;
 	border: 1px solid var(--iban-line);
 	background: #fff;
 	color: var(--iban-ink);
 }
 
-.iban-login .page-card .btn-default:hover {
+.iban-login .es-button[data-variant="outline"]:hover {
 	background: var(--iban-surface);
 }
 
+/* login.js sets aria-busy and swaps the label for <span class="es-spinner"> */
+.iban-login .es-button[aria-busy="true"] {
+	pointer-events: none;
+}
+
+.iban-login .es-button .es-spinner {
+	width: 20px;
+	height: 20px;
+}
+
 .iban-login .social-logins {
-	margin-top: 18px;
+	margin-top: 6px;
 }
 
 .iban-login .login-divider {
 	display: flex;
 	align-items: center;
 	gap: 12px;
-	margin: 0 0 14px;
+	margin: 0 0 12px;
 	color: var(--iban-muted);
 	font-size: 12px;
 }
@@ -550,9 +617,20 @@ body.iban-login-page {
 }
 
 .iban-signup-disabled {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 	color: var(--iban-muted);
 	font-size: 14px;
 	text-align: center;
+}
+
+.iban-signup-disabled p {
+	margin: 0;
+}
+
+.iban-signup-disabled .es-button {
+	margin-top: 8px;
 }
 
 /* invalid login: frappe toggles these classes */
@@ -560,14 +638,70 @@ body.iban-login-page {
 	animation: iban-shake 0.35s ease-in-out;
 }
 
-.iban-login .page-card-body.invalid .form-control {
+.iban-login .page-card-body.invalid .form-control,
+.iban-login .form-group.invalid .form-control {
 	border-color: var(--iban-danger);
 }
 
-.iban-login .page-card-body.invalid ~ .page-card-actions .btn-primary,
-.iban-login .invalid-login .btn-primary {
+.iban-login .page-card-body.invalid .form-control:focus,
+.iban-login .form-group.invalid .form-control:focus {
+	box-shadow: 0 0 0 3px rgba(217, 45, 58, 0.16);
+}
+
+.iban-login .page-card-body.invalid ~ .page-card-actions .es-button[data-variant="solid"],
+.iban-login .invalid-login .es-button[data-variant="solid"] {
 	background: var(--iban-danger);
 	box-shadow: none;
+}
+
+/* inline per-field error, shown by login.show_field_error() via .form-group.invalid */
+.iban-login .field-error {
+	display: none;
+	margin: 6px 0 0;
+	color: var(--iban-danger);
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.iban-login .form-group.invalid .field-error {
+	display: block;
+}
+
+/* alert banners from the alert_banner() macro (.es-alert, themed red/green) */
+.iban-login .es-alert {
+	margin-bottom: 16px;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 14px;
+	border-radius: 10px;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.iban-login .es-alert[data-theme="red"] {
+	--es-al-bg: var(--iban-danger-soft);
+	--es-al-icon: var(--iban-danger);
+}
+
+.iban-login .es-alert[data-theme="green"] {
+	--es-al-bg: var(--iban-success-soft);
+	--es-al-icon: var(--iban-success);
+}
+
+.iban-login .es-alert .es-alert__title {
+	color: var(--iban-ink);
+}
+
+/* "Didn't receive the link? Resend" */
+.iban-login .resend-link {
+	margin: 0;
+	color: var(--iban-muted);
+	font-size: 13px;
+	text-align: center;
+}
+
+.iban-login .resend-link a {
+	font-weight: 600;
 }
 
 @keyframes iban-shake {
@@ -575,7 +709,23 @@ body.iban-login-page {
 	40%, 80% { transform: translateX(6px); }
 }
 
-/* 2FA view injected by login.js */
+/* 2FA view injected by login.js (request_otp) */
+.iban-login .form-verify {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.iban-login .form-verify .page-card-head {
+	margin-bottom: 0;
+}
+
+.iban-login #otp_div {
+	color: var(--iban-muted);
+	font-size: 14px;
+	text-align: center;
+}
+
 .iban-login #login_token {
 	letter-spacing: 0.3em;
 	text-align: center;
